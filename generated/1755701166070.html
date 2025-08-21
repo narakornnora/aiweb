@@ -1,0 +1,117 @@
+แน่นอน! ด้านล่างนี้คือโค้ด HTML สำหรับเว็บเพจที่มีการถามข้อมูลที่คุณต้องการ และฟังก์ชันการสร้างเว็บไซต์ตามความต้องการที่ได้รับจากข้อมูลที่ให้มา:
+
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สร้างเว็บธุรกิจของคุณ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>สร้างเว็บธุรกิจของคุณ</h1>
+            <p>สวัสดีครับ 👋 บอกผม: ชื่อธุรกิจ / ประเภทเว็บ / กลุ่มลูกค้า / โปรโมชัน / ช่องทางติดต่อ แล้วกด 'สร้างเว็บ' ได้เลย</p>
+        </header>
+
+        <form id="businessForm">
+            <label for="businessName">ชื่อธุรกิจ:</label>
+            <input type="text" id="businessName" required>
+
+            <label for="websiteType">ประเภทเว็บ:</label>
+            <input type="text" id="websiteType" required>
+
+            <label for="targetAudience">กลุ่มลูกค้า:</label>
+            <input type="text" id="targetAudience" required>
+
+            <label for="promotion">โปรโมชัน:</label>
+            <input type="text" id="promotion" required>
+
+            <label for="contactChannel">ช่องทางติดต่อ:</label>
+            <input type="text" id="contactChannel" required>
+
+            <button type="submit">สร้างเว็บ</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 สร้างเว็บธุรกิจ - ทุกสิทธิ์เป็นของธุรกิจ</p>
+    </footer>
+
+    <script>
+        document.getElementById('businessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const businessName = document.getElementById('businessName').value;
+            const websiteType = document.getElementById('websiteType').value;
+            const targetAudience = document.getElementById('targetAudience').value;
+            const promotion = document.getElementById('promotion').value;
+            const contactChannel = document.getElementById('contactChannel').value;
+
+            alert(`สร้างเว็บสำหรับ "${businessName}" ประเภท "${websiteType}" สำหรับกลุ่ม "${targetAudience}" พร้อมโปรโมชัน "${promotion}" ติดต่อผ่าน "${contactChannel}"`);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</body>
+</html>
+```
+
+### คำอธิบายโค้ด
+- Form ที่ให้ผู้ใช้ส่งข้อมูลเกี่ยวกับธุรกิจ: ชื่อธุรกิจ, ประเภทเว็บ, กลุ่มลูกค้า, โปรโมชัน, และช่องทางติดต่อ
+- JavaScript สำหรับการจัดการกับข้อมูลเมื่อผู้ใช้ส่งแบบฟอร์ม โดยจะแสดงข้อมูลผ่าน alert
+- CSS สำหรับการจัดรูปแบบหน้าเว็บให้น่าสนใจและใช้งานง่าย
+
+คุณสามารถคัดลอกโค้ดนี้และวางลงในไฟล์ HTML ของคุณเพื่อทดลองสร้างเว็บเพจได้เลย!

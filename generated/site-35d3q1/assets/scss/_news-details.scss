@@ -1,0 +1,380 @@
+/*
+*****
+29. news-details
+******************
+*/
+.single-news-area {
+    padding: 48px 48px;
+    border: 2px solid #f3f3f3;
+    @include mq(xs) {
+        padding: 30px 20px;
+    }
+}
+
+.single-news-wrapper {
+    & h3 {
+        font-size: 30px;
+        @include mq(xs) {
+            font-size: 19px;
+        }
+    }
+}
+.single-news-wrapper .s-news-title,.s-news-title {
+    font-size: 35px;
+    margin-bottom: 12px;
+    @include mq(xs) {
+        font-size: 17px;
+    }
+}
+.news-thumb-content {
+    &:is(.has-flex) {
+        & .thumb {
+            flex: 0 0 auto;
+            padding-right: 31px;
+            @include mq(xs) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.s-news-list {
+    padding-left: 0;
+    & li {
+        list-style: none;
+        padding-left: 29px;
+        position: relative;
+        &::after {
+            position: absolute;
+            left:  0;
+            font-family: 'Font awesome 5 pro';
+            top: 50%;
+            transform: translateY(-50%);
+            content: "\f00c";
+            font-size: 16px;
+            color: #2d48c3;
+        }
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+}
+.s-news-blockquote {
+    background: #f6f6f6;
+    padding: 57px 43px;
+    padding-bottom: 57px;
+    @include mq(xs) {
+        padding: 32px 24px;
+    }
+    & blockquote {
+        margin-bottom: 0;
+    }
+    & span {
+        color: #2d48c3;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        display: block;
+        @include mq(xs) {
+            margin-bottom: 10px;
+        }
+    }
+    & h3 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 0;
+        color: #181b1d;
+        @include mq(xs) {
+            font-size: 16px;
+        }
+    }
+}
+p.mb-45 {
+    margin-bottom: 45px;
+}
+.share-social {
+    & a {
+        color: #d3d3d3;
+        font-size: 18px;
+        margin-left: 26px;
+        @include mq(xs) {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    }
+}
+.single-post-nav {
+    & span {
+        font-size: 14px;
+        color: #777777;
+        display: block;
+        padding-bottom: 8px;
+    }
+    & h4 {
+        margin-bottom: 0;
+        font-weight: 700;
+        font-size: 28px;
+        @include mq(xs) {
+            font-size: 22px;
+        }
+    }
+}
+.post-nav {
+    position: relative;
+    & :is(.post-dot-shape) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+// related post
+.related-title {
+    font-size: 26px;
+}
+.single-r-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    @include mq(xs) {
+        font-size: 17px;
+        margin-bottom: 13px;
+    }
+    @include mq(md) {
+        font-size: 18px;
+    }
+}
+.single-r-news {
+    & .content {
+        padding: 35px 30px;
+        padding-bottom: 39px;
+        box-shadow: 0px 8px 16px 0px rgb(93 93 93 / 6%);
+        @include mq(xs) {
+            padding: 28px 19px;
+            padding-bottom: 28px;
+        }
+    }
+}
+  
+.custom-row {
+    margin: 0 -15px;
+}
+.related-active .slick-list {
+    box-sizing: initial;
+    padding: 25px 0px;
+  }
+.single-author-box {
+    border: 2px solid #f3f3f3;
+    padding: 38px;
+    margin-bottom: 44px;
+    &:is(.has-flex) {
+        & .thumb {
+            padding-right: 42px;
+            flex: 0 0 auto;
+            margin-bottom: 6px;
+            @include mq(xs) {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            @include mq(md) {
+                padding-right: 30px;
+            }
+        }
+        & .content {
+            & span {
+                color: #2d48c3;
+                font-size: 12px;
+                font-weight: 700;
+            }
+            & h4 {
+                font-size: 20px;
+                margin-bottom: 13px;
+                @include mq(xs) {
+                    font-size: 20px;
+                }
+                @include mq(md) {
+                    font-size: 30px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    @include mq(xs) {
+        padding: 25px;
+        margin-bottom: 35px;
+    }
+}
+.latest-comments {
+    & > ul {
+        & > li {
+            border-bottom: 1px solid #f3f3f3;
+        }
+    }
+    & ul {
+        padding-left: 0;
+        & li {
+            list-style-type: none;
+            @at-root {
+                
+                .comment-avater {
+                    padding-right: 30px;
+                }
+                .avater-text {
+                    overflow: hidden;
+                    padding-left: 2px;
+                    position: relative;
+                    margin-bottom: 10px;
+                    & h5 {
+                        font-size: 18px;
+                        margin-bottom: 4px;
+                    }
+                    & :is(.replay-btn) {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        @include mq(xs) {
+                            position: static;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .replay-btn {
+                    color: #777777;
+                    font-size: 14px;
+                    padding: 10px 22px;
+                    line-height: 1;
+                    display: inline-block;
+                    border: 2px solid #f3f3f3;
+                    border-radius: 10px;
+                    & i {
+                        color: #2d48c3;
+                        padding-right: 5px;
+                    }
+                    &:hover {
+                        color: #fff;
+                        border-color: #2d48c3;
+                        background-color: #2d48c3;
+                        & i {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.comment-text {
+    overflow: hidden;
+    padding-top: 13px;
+}
+.comment-text:is(.has-children) {
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 28px;
+    @include mq(xs) {
+        padding-bottom: 32px;
+    }
+}
+.children {
+    padding-left: 130px;
+    & .comment-text {
+    padding-bottom: 27px;
+    border: none;
+    }
+    @include mq(xs) {
+        padding-left: 0;
+    }
+}
+.comment-form-inner-2 {
+    background: #f6f6f6;
+    border-radius: 16px;
+    padding: 50px;
+    @include mq(xs) {
+        padding: 20px;
+    }
+}
+.s-comment-form {
+    position: relative;
+    margin-bottom: 20px;
+    & input {
+        width: 100%;
+        height: 60px;
+        border: 0;
+        border-radius: 16px;
+        padding: 0 30px;
+        @include placeholder {
+            font-size: 14px;
+            color: #999999;
+        }
+    }
+    & label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 30px;
+        font-size: 14px;
+        color: #2d48c3;
+    }
+}
+.comment-textarea {
+    position: relative;
+    height: 150px;
+    @include mq(xs) {
+        height: 110px;
+    }
+    & textarea {
+        border: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+        font-size: 14px;
+        padding: 24px 30px;
+        color: #999999;
+        @include mq(xs) {
+            padding: 20px 15px;
+        }
+    }
+    & label {
+        font-size: 14px;
+        color: #2d48c3;
+        position: absolute;
+        right: 30px;
+        top: 23px;
+    }
+}
+.s-comment-btn {
+    height: 60px;
+    border: 0;
+    padding: 0 42px;
+    border-radius: 16px;
+    color: #fff;
+    background: #2d48c3;
+    font-size: 14px;
+    & i {
+        padding-right: 4px;
+    }
+    @include mq(xs) {
+        height: 50px;
+        padding: 0 27px;
+    }
+}
+.n-content-1 {
+    @include mq(lg) {
+        padding-right: 22px;
+    }
+}
+.news-action {
+    @include mq(lg) {
+        margin-left: 0;
+        display: grid;
+        grid-gap: 10px;
+    }
+}
+.listing-action {
+    @include mq(lg) {
+        margin-left: 20px;
+    }
+}
+
+.f-md-left {
+    @media (min-width: 768px) {
+        float: left;
+    }
+}

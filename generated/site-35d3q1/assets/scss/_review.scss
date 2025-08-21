@@ -1,0 +1,159 @@
+/*
+*****
+16. review
+******************
+*/
+.review-place {
+  position: relative;
+
+  &:hover {
+    .thumb {
+      img {
+        transform: scale(1.2);
+      }
+    }
+
+    .content {
+      p {
+        margin-top: 10px;
+        visibility: visible;
+        opacity: 1;
+        height: 20px;
+        @include mq(lg) {
+          height: 40px;
+        }
+        @include mq(xs) {
+          height: 40px;
+        }
+        @include mq(sm) {
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .thumb {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+      background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+      background-image: -ms-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    img {
+      width: 100%;
+      @include transition(0.3s);
+    }
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 5;
+    padding-right: 100px;
+
+    .review {
+      margin-bottom: 5px;
+
+      a {
+        display: inline-block;
+        color: #ffae00;
+        font-size: 14px;
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 0;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: $theme-color-3;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      color: #fff;
+      font-size: 14px;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      @include transition(0.3s);
+      @include mq(xs) {
+        display: none;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+
+      a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: #fff;
+        color: $theme-color-3;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .cart-btn {
+        background: #fff;
+        color: $theme-color-3;
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+          z-index: 3;
+        }
+      }
+
+      .wishlist-btn {
+        color: #fff;
+        background: $theme-color-3;
+        margin-left: -16px;
+        position: relative;
+
+        &:hover {
+          z-index: 3;
+        }
+      }
+    }
+  }
+}
+
+.f-filter-nav {
+  & button {
+    margin: 0;
+    margin-left: 10px;
+    @include mq(xs) {
+    margin-bottom: 8px;
+    }
+  }
+}
+.f-review-thumb {
+  @include mq(lg) {
+    margin-right: 23px;
+  }
+}

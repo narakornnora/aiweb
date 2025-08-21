@@ -1,0 +1,222 @@
+/*
+*****
+12. newsletter
+******************
+*/
+.newsletter-area {
+	background: #f7f7f7;
+	position: relative;
+	@include mq(lg) {
+		padding-bottom: 0;
+	}
+	@include mq(md) {
+		padding-bottom: 0;
+	}
+	@include mq(xs) {
+		padding-bottom: 0;
+	}
+
+
+	.newsletter-video {
+		position: absolute;
+		left: 0;
+		top: -20px;
+
+		@include cmq(1200px, 1760px) {
+			width: 50%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		@include mq(lg) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			text-align: center;
+			margin-top: 100px;
+		}
+
+		@include mq(md) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			text-align: center;
+			margin-top: 100px;
+		}
+
+		@include mq(xs) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			text-align: center;
+			margin-top: 100px;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.play-btn {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 120px;
+			height: 120px;
+			line-height: 120px;
+			background: #fff;
+			color: $theme-color-2;
+			font-size: 18px;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			text-align: center;
+			&:hover {
+				background-color: #43824f;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.newsletter-content {
+	.animated-title {
+		margin-bottom: 35px;
+
+		span {
+			svg {
+				bottom: -25px;
+			}
+		}
+	}
+}
+
+.newsletter-form {
+	.input-wrap {
+		position: relative;
+		box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.04);
+
+		input {
+			width: 100%;
+			height: 60px;
+			padding: 0 30px;
+			background: #fff;
+			border: 0;
+			border-radius: 15px;
+		}
+
+		button {
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			color: #fff;
+			background: $theme-color-2;
+			padding: 0 50px;
+			border: 0;
+			border-radius: 15px;
+			&:hover {
+				background-color: #000;
+				color: #fff;
+			}
+			@include mq(xs){
+				padding: 0 25px;
+			}
+
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.newsletter-wrap{
+	padding: 50px;
+	border-radius: 15px;
+	margin-left: 50px;
+	background: #fff;
+	box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.04);
+	position: relative;
+	z-index: 1;
+	@include mq(xs){
+		margin: 0;
+		padding: 30px;
+		box-shadow: 0px 0 32px 0px rgba(0, 0, 0, 0.04);
+	}
+
+	.section-title-5{
+		.title{
+			@include mq(xs){
+				font-size: 25px;
+			}
+		}
+	}
+	.icon{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		color: #f7f7f7;
+		font-size: 150px;
+		z-index: -1;
+		@include mq(xs){
+			display: none;
+		}
+	}
+	form{
+		.input-wrap{
+			position: relative;
+			input{
+				width: 100%;
+				height: 70px;
+				background: #f8f8f8;
+				border-radius: 15px;
+				border: 0;
+				color: #181b1d;
+				padding: 0 40px;
+				@include placeholder(){
+					color: #a6a6a6;
+				}
+			}
+			button{
+				position: absolute;
+				height: 50px;
+				background: $theme-color;
+				padding: 0 30px;
+				top: 50%;
+				right: 10px;
+				transform: translateY(-50%);
+				border: 0;
+				border-radius: 15px;
+				color: #fff;
+				&:hover {
+					background-color: #000;
+				}
+				i{
+					margin-right: 5px;
+				}
+				@include mq(xs) {
+					transform: translateY(0);
+					position: static;
+					margin-top: 23px;
+				}
+			}
+		}
+	}
+}
+
+.newsletter-area-thumb {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	@include mq(xs){
+		display: none;
+	}
+}
+.counter-wrap i {
+    font-weight: 200;
+}
+.work-wrap-3 i {
+    font-size: 80px;
+    color: #e74c3c;
+    margin-bottom: 32px;
+    display: block;
+}

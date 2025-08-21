@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "circlecamp-465516",
+  "private_key_id": "8688c511a5cc411f0f92ab652383fc06205872f7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCn6z3GPxJp6jG0\ngbOKD9lxvaUtPeO0LJ3KoFg4LVFMK8puIqkQOXwGv7KXQufsFHSqM+2WmtceUJ5d\nvQ4+v0wBS+QpKxXHtUJxiyh9LNojjiar70bERhC/r1wOHEHgtwpg0jOCmgfinLIE\ndttNkchwnQT6AdM0Fz5LFjJyURjj9/drZGZIY+AhxShsP2pGHG7pQpUJQvHEoaQI\n3UMKLJOhmtD6W37YSL1UEVyQMekjwr3VhXlXYLy9iwpmSx6v1MBoLMFdtSwzyUK5\nAsKYCNDIiLwKgoAD930IrO6nAQjr4KDtkha1FIVoJcA2cX7I2ozdfp3j/fE8/dz8\ncRZIX9XtAgMBAAECggEAAsO9vaDWNcY0UUt9YD2Ij/XWXVtSf2nooyhmq24bk4x5\nBb0uWWUI5LeNQi5I0Ts4/IBkXgFon0gmg1aUgHX302GjfQYHksUqNeJbpUvyv3kc\nq+IBoUOiDPXfJyBR+VgqJJPxYyoUDSgVSjuGus02ppv/M/qJtqbXULcp13X8Wex5\nYwJFp23Uh3lNyn86ZrWCYKVQDcIrms7B1DOF9GRWpDAUEc4AxWlSrxYVkVSO0VP7\ncuDy1xkxc+cfRjmbUD1nDc0yOSbjnFJ/P/pHVevbeyK6ahjcLlRxzfERMUfElclm\nQT8p4n6vjbrg7OdtNAGTRKKzr9P3WV1U0Nt6Eb6NhQKBgQDUzvOOgtWONK9j1Cbr\nTpnkn7ZVwTeHfN8trjrpQQ844qi2yFoHLXjV01iDKnAWOLZsM3IjkCHy3rEgcjrn\nIeHGxLLDiXuyzfQKol6webnqSxre9lCGkiwA1hZGZinSwAtxnRLEdwBafsd/clba\nguzlo8ruAw9dJe1lvdP/X9iTzwKBgQDJ/+6rPQS4lg0p8zKeTLTRbXJ1Hy7q4PEN\nBZzbWQ9ZMo5kuMAV0bMscoqqjz9MLvN1uqfsqZSLcwAR96aCkGOaNoQwC3qJ9KLI\n8I3ue4Eac2osmfFf5PQGMHvQveJlBDbsurBm9wDwNeZIaOn6iCzviebbpTm/MT0G\n+jbZaAZdgwKBgFlsWTYSTlDCXM0TMgOA9PP4FPN2DLJ3S4TziLfJae8ad5DPId2Q\nQw1/ENuVMqJz1FwlRhohj9Jxt3aN6aiEOU6ACypVlFAvcRQi5K09iV0lkDYOxQm3\nVJxJWfTdK0fvASANw/wgkVp1mbk5P7v0dj2NFVHsoUEgFeDB4tqV2PlLAoGAQJW9\n365AxivjxZfmhUqNPbC6ucvgmmSVbc5vmopdJ+3MLVQMxm0n1nxA7cujN16DpQ6r\nBjYqMnPwf84oxPIZhoMLvLjO0zEOoySWnLuMScLBHcWSsVBo3Vm/HLy5mAbC8Om3\n4RP0jtkM6fXxaZMEmwoCcBPh5Ml/c62ov9ZMwrUCgYASRxmt2Hjl+0TuX3c4GcPa\nP8gw1Ry2CwCumEpBf5mn/P+pqhd1QBsZoSPcCNLfF9KXGr7r7BPizhACr8f4hcz6\nnP5mjjqIL01RgdO0mugNmvn8AKimOI1SWSVtKiP6Fd/T4RJcUgSg0iWy1xvN1YFb\nCw9MlweLpP5ysbCoCG3vOw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "circlecamp-translator@circlecamp-465516.iam.gserviceaccount.com",
+  "client_id": "116139317711298370350",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/circlecamp-translator%40circlecamp-465516.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

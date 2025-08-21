@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f4f4f4; }
+    header { background: #000; color: white; text-align: center; padding: 20px; }
+    header img { width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px; }
+
+    /* Fade Carousel */
+    .carousel { position: relative; width: 100%; height: 400px; margin: 20px auto; overflow: hidden; }
+    .carousel img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; border-radius: 8px; }
+    .carousel img.active { opacity: 1; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 20px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+    .gallery figcaption { text-align: center; font-size: 14px; margin-top: 4px; color: #555; }
+
+    footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1></h1>
+    <img src="https://images.unsplash.com/photo-1755564270752-10a4633df511?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Abstract layered design with red and gray curves" />
+  </header>
+
+  <!-- Carousel -->
+  <section class="carousel">
+    <img src="https://images.unsplash.com/photo-1755563622693-3da2d9dc3ec5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Text art with green melting effect" class="active" /><img src="https://images.unsplash.com/photo-1755541608109-5885f36a3739?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="website" class="" /><img src="https://images.unsplash.com/photo-1755540735876-ff503cf594fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="website" class="" />
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755524486570-b78919443dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw1fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Traditional pagoda illuminated at night against dark sky" />
+        <figcaption>Traditional pagoda illuminated at night against dark sky</figcaption>
+      </figure>
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755502046551-102bcdc6f0c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw2fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Abstract light blue curves with soft lighting" />
+        <figcaption>Abstract light blue curves with soft lighting</figcaption>
+      </figure>
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755502046743-78265e184cc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw3fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Abstract pastel ribbons flowing on a soft gradient background" />
+        <figcaption>Abstract pastel ribbons flowing on a soft gradient background</figcaption>
+      </figure>
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755467969128-54798d2dfeec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw4fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Man with red hair and beard looks to the side" />
+        <figcaption>Man with red hair and beard looks to the side</figcaption>
+      </figure>
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755465770351-f8ba8f8064a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw5fHx3ZWJzaXRlfGVufDF8MHwyfHwxNzU1NjgxMzY2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Dark green leaves with textured surfaces" />
+        <figcaption>Dark green leaves with textured surfaces</figcaption>
+      </figure>
+    
+      <figure>
+        <img src="https://images.unsplash.com/photo-1755426225471-676b0db1658e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMHx8d2Vic2l0ZXxlbnwxfDB8Mnx8MTc1NTY4MTM2Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Arrow pointing left towards "do cafe" sign." />
+        <figcaption>Arrow pointing left towards "do cafe" sign.</figcaption>
+      </figure>
+    
+  </section>
+
+  <footer>
+    © 2025 สร้างโดย AIWebFAZ
+  </footer>
+
+  <script>
+    const imgs = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      imgs[index].classList.remove('active');
+      index = (index + 1) % imgs.length;
+      imgs[index].classList.add('active');
+    }, 4000);
+  </script>
+</body>
+</html>

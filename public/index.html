@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>AIWebFAZ - AI Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .chat-container {
+      width: 450px;
+      height: 600px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .chat-header {
+      background: #4CAF50;
+      color: white;
+      padding: 12px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .chat-box {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .message {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .user-message {
+      background: #DCF8C6;
+      align-self: flex-end;
+    }
+    .ai-message {
+      background: #ECECEC;
+      align-self: flex-start;
+    }
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 0 0 0 10px;
+      outline: none;
+    }
+    .chat-input button {
+      background: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 0 0 10px 0;
+    }
+    .chat-input button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">🤖 AI Chat</div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="พิมพ์ข้อความที่นี่...">
+      <button onclick="sendMessage()">ส่ง</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (!message) return;
+
+      const chatBox = document.getElementById("chatBox");
+
+      // แสดงข้อความของ user
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user-message";
+      userMsg.textContent = message;
+      chatBox.appendChild(userMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      input.value = "";
+
+      try {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+        const data = await res.json();
+
+        // แสดงข้อความ AI
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "message ai-message";
+        aiMsg.textContent = data.reply || "⚠️ ไม่มีการตอบกลับจาก AI";
+        chatBox.appendChild(aiMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+      } catch (err) {
+        console.error(err);
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "message ai-message";
+        aiMsg.textContent = "⚠️ เกิดข้อผิดพลาดในการเชื่อมต่อ API";
+        chatBox.appendChild(aiMsg);
+      }
+    }
+  </script>
+</body>
+</html>

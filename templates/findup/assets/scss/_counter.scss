@@ -1,0 +1,199 @@
+/*
+*****
+15. counter
+******************
+*/
+.counter-wrap {
+  padding: 40px;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+  @include transition(0.3s);
+  box-shadow: 0px 16px 32px 0px rgba(171, 171, 171, 0.1);
+
+  &:hover {
+    background: $theme-color;
+
+    .icon {
+      color: $theme-color;
+      background: #fff;
+    }
+
+    .content {
+      h3 {
+        color: #fff;
+
+        .prefix {
+          color: #fff;
+        }
+      }
+
+      p {
+        color: #adbbf7;
+      }
+    }
+  }
+
+  .icon {
+    width: 90px;
+    height: 90px;
+    line-height: 95px;
+    font-size: 40px;
+    color: #fff;
+    background: $theme-color;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    @include transition(0.3s);
+  }
+
+  .content {
+    h3 {
+      color: #181b1d;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 0;
+      line-height: 38px;
+      @include transition(0.3s);
+
+      .prefix {
+        font-size: 14px;
+        color: $theme-color;
+      }
+    }
+
+    p {
+      color: #777777;
+      font-size: 14px;
+      margin-bottom: 0;
+      @include transition(0.3s);
+    }
+  }
+}
+
+.counter-wrapper {
+  position: relative;
+  margin-bottom: -110px;
+  @include mq(lg) {
+    margin-top: 30px;
+  }
+  @include mq(md) {
+    margin-top: 30px;
+  }
+  @include mq(xs) {
+    margin-top: 30px;
+  }
+}
+
+.counter-wrap-2 {
+  @include mq(lg) {
+    text-align: center;
+  }
+  @include mq(md) {
+    text-align: center;
+  }
+  @include mq(xs) {
+    text-align: center;
+  }
+
+  .content {
+    h3 {
+      font-size: 60px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.counter-shape {
+  padding: 52px 80px 25px;
+  background: $theme-color;
+  border-radius: 0 0 15px 15px;
+  @include mq(xs) {
+    padding: 52px 51px 25px;
+  }
+}
+
+.counter-wrap-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    font-size: 60px;
+    color: #fff;
+    background: $theme-color;
+    margin-right: 15px;
+    border-radius: 50%;
+    @include transition(0.3s);
+  }
+
+  .content {
+    h3 {
+      font-size: 50px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0;
+      .prefix {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  }
+  &:is(.f-counter-wrap) {
+    justify-content: space-between;
+  }
+}
+.counter-wrap-3.f-custom-counter-wrap {
+  display: block;
+  & .icon {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+    margin-top: 8px;
+    @include mq(xs) {
+      display: block;
+    }
+  }
+  & .content {
+    line-height: 1;
+    display: inline-block;
+    & h3 {
+      line-height: 1;
+    }
+    & p {
+      font-weight: 400;
+    }
+  }
+  @include mq(lg) {
+    flex: 0 0 33.33%;
+  }
+  @include mq(md) {
+    flex: 0 0 50%;
+  }
+  @include mq(md) {
+    flex: 0 0 50%;
+  }
+  @include mq(sm) {
+    flex: 0 0 50%;
+  }
+  @include mq(xs) {
+    flex: 0 0 100%;
+  }
+}
+.counter-flex-2 {display: flex;justify-content: space-between;flex-wrap: wrap;}

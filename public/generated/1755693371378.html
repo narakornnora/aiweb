@@ -1,0 +1,87 @@
+
+    <!DOCTYPE html>
+    <html lang="th">
+    <head>
+      <meta charset="UTF-8">
+      <title>ร้านอาหารไทย</title>
+      <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; background: #fafafa; }
+        h1 { text-align: center; padding: 20px; }
+
+        /* --- Slideshow Header --- */
+        .slideshow-container {
+          max-width: 100%;
+          height: 400px;
+          position: relative;
+          margin: auto;
+          overflow: hidden;
+          background: #000;
+        }
+        .mySlides {
+          display: none;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        .mySlides img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .fade {
+          animation: fadeEffect 4s infinite;
+        }
+        @keyframes fadeEffect {
+          from { opacity: .4; }
+          to   { opacity: 1; }
+        }
+
+        /* --- Gallery Section --- */
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 10px;
+          padding: 20px;
+        }
+        .gallery img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-radius: 10px;
+          transition: transform .3s;
+        }
+        .gallery img:hover {
+          transform: scale(1.05);
+        }
+      </style>
+    </head>
+    <body>
+      <h1>ร้านอาหารไทย</h1>
+
+      <!-- 🔹 Rotate Header Slideshow -->
+      <div class="slideshow-container">
+        <div class="mySlides fade"><img src="https://images.unsplash.com/photo-1675150277436-9c7348972c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /></div><div class="mySlides fade"><img src="https://images.unsplash.com/photo-1526234362653-3b75a0c07438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /></div><div class="mySlides fade"><img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /></div>
+      </div>
+
+      <!-- 🔹 Gallery -->
+      <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1675150277436-9c7348972c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1526234362653-3b75a0c07438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw0fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1583475020839-105dddecc00a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw1fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1665917152889-b170c7b8b5fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw2fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1476055439777-977cdf3a5699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw3fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1628428800730-43b0f1246a0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw4fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw5fHxUaGFpJTIwcmVzdGF1cmFudHxlbnwwfHx8fDE3NTU2OTMzNzB8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1740695601629-46154fde5322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMHx8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1715261621529-cc2f5ee78781?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMXx8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1552531268-3fe8c3fc8d84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMnx8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1668072921628-6e024f6aadd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxM3x8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1626775061010-cdf275c24bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxNHx8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1668072921663-604caa194507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxNXx8VGhhaSUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU1NjkzMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080" />
+      </section>
+
+      <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("mySlides");
+        function showSlides() {
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) { slideIndex = 1 }
+          slides[slideIndex-1].style.display = "block";  
+          setTimeout(showSlides, 4000); // ⏳ 4 วิ rotate
+        }
+        showSlides();
+      </script>
+    </body>
+    </html>
+    

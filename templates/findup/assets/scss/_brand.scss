@@ -1,0 +1,48 @@
+/*
+*****
+21. brand
+******************
+*/
+.brand-spacing {
+  padding-left: 235px;
+  padding-right: 235px;
+  @include mq(xl) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include mq(lg) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include mq(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include mq(xs) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.brand-slider {
+  .single-brand {
+    text-align: center;
+    padding: 0 20px;
+
+    img {
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+}
+.brand-space {
+  margin-bottom: 100px;
+  @include mq(xs) {
+    margin-bottom: 0;
+  }
+}
+.cta-space {
+  @include mq(xs)  {
+    padding-top: 0;
+  }
+}

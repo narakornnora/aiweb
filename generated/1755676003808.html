@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f4f4f4; }
+    header { background: #000; color: white; text-align: center; padding: 20px; }
+    header img { width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px; }
+
+    /* Carousel Fade */
+    .carousel { position: relative; width: 100%; height: 400px; margin: 20px auto; overflow: hidden; }
+    .carousel img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; border-radius: 8px; }
+    .carousel img.active { opacity: 1; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 20px; }
+    .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1></h1>
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Hero image" />
+  </header>
+
+  <section class="carousel">
+    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" class="active" /><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" class="" /><img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" class="" />
+  </section>
+
+  <section class="gallery">
+    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw1fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw2fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw3fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw4fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1481487196290-c152efe083f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw5fHx3ZWJzaXRlfGVufDB8MHx8fDE3NTU2NzYwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080" /><img src="https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMHx8d2Vic2l0ZXxlbnwwfDB8fHwxNzU1Njc2MDAzfDA&ixlib=rb-4.1.0&q=80&w=1080" />
+  </section>
+
+  <footer>
+    © 2025 สร้างโดย AIWebFAZ
+  </footer>
+
+  <script>
+    const imgs = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      imgs[index].classList.remove('active');
+      index = (index + 1) % imgs.length;
+      imgs[index].classList.add('active');
+    }, 4000); // Fade ทุก 4 วิ
+  </script>
+</body>
+</html>

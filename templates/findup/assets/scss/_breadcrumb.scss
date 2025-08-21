@@ -1,0 +1,81 @@
+
+/*
+*****
+17. breadcrumb
+******************
+*/
+.breadcrumb-title {
+  .sub-title {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .title {
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    @include mq(xs) {
+      font-size: 36px;
+    }
+  }
+}
+
+.breadcrumb-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-radius: 15px 15px 0 0;
+  padding: 20px 30px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      color: #afafaf;
+      font-size: 16px;
+      margin-right: 15px;
+      position: relative;
+      font-weight: 700;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        height: 16px;
+        width: 2px;
+        background: #e9e9e9;
+        transform: translateY(-50%);
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      a {
+        color: #afafaf;
+
+        &:hover {
+          color: $theme-color;
+        }
+      }
+    }
+
+    li.active {
+      color: $theme-color;
+    }
+  }
+}
+.breadcrumb-space {
+  @include mq(xs) {
+    margin-bottom: 55px;
+  }
+}

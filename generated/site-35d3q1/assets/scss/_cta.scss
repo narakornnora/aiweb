@@ -1,0 +1,272 @@
+/*
+*****
+9. cta
+******************
+*/
+.cta-area {
+  position: relative;
+  overflow: hidden;
+
+  .cta-thumb {
+    position: absolute;
+    right: 14.5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include mq(xl) {
+      right: -2%;
+    }
+    @include cmq(1280px, 1330px) {
+      right: 2%;
+    }
+    @include cmq(1331px, 1460px) {
+      right: 5%;
+    }
+    @include cmq(1461px, 1550px) {
+      right: 9%;
+    }
+    @include cmq(1551px, 1700px) {
+      right: 12%;
+    }
+    @include mq(lg) {
+      right: -130px;
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+    @include mq(xs) {
+      display: none;
+    }
+  }
+}
+
+.cta-text {
+  .sub-title {
+    @include mq(xs) {
+      font-size: 35px;
+    }
+  }
+
+  .animated-title {
+    color: #fff;
+    line-height: 70px;
+    margin-bottom: 30px;
+    @include mq(xs) {
+      line-height: 55px;
+      font-size: 40px;
+    }
+    &:is(.aniamted-title-2) {
+      @include mq(xs) {
+        font-size: 31px;
+        line-height: 1.3;
+      }
+    }
+
+    span {
+      color: #fff;
+
+      svg {
+        bottom: -25px;
+      }
+    }
+  }
+
+  p {
+    color: #d1d6d9;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-right: 130px;
+    @include mq(lg) {
+      padding-right: 80px;
+    }
+    @include mq(md) {
+      padding-right: 40px;
+    }
+    @include mq(xs) {
+      padding-right: 0;
+    }
+  }
+
+  .a-btn {
+    &:hover {
+      background: #fff;
+      color: $theme-color-2;
+    }
+  }
+}
+
+
+.cta-area-2 {
+  position: relative;
+  z-index: 1;
+
+  .cta-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 38%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include mq(xl) {
+      width: 30%;
+    }
+    @include mq(lg) {
+      display: none;
+    }
+    @include mq(md) {
+      display: none;
+    }
+    @include mq(xs) {
+      display: none;
+    }
+  }
+}
+
+.cta-content-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mq(xs) {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .content {
+    @include mq(xs) {
+      margin-bottom: 30px;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h3 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 0;
+      @include mq(md) {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .cta-btn {
+    a {
+      display: inline-block;
+      padding: 22px 45px;
+      border: 2px solid #fff;
+      color: #fff;
+      background: none;
+      font-weight: 700;
+      border-radius: 15px;
+
+      i {
+        margin-right: 5px;
+      }
+
+      @include mq(md) {
+        padding: 22px 35px;
+      }
+
+      &:hover {
+        background: #fff;
+        color: $theme-color;
+      }
+    }
+  }
+  &:is(.f-cta) {
+    & .content {
+      & span {
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+
+.fun-fact-title {
+  .sub-title {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 48px;
+    margin-bottom: 0;
+  }
+}
+
+
+.cta-content-3 {
+  background: #fff;
+  margin-right: 50px;
+  padding: 60px;
+  border-radius: 15px;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.04);
+  @include mq(xs) {
+    margin-right: 0;
+    padding: 30px;
+  }
+
+  .sub-title {
+
+  }
+
+  .title {
+
+  }
+
+  p {
+
+  }
+
+  .button-group {
+    .btn {
+      @include mq(xs) {
+        padding: 18px 20px;
+      }
+      @include cmq(320px, 450px) {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      i {
+        margin-left: 20px;
+        @include mq(xs) {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .btn-theme {
+
+    }
+
+    .btn-dark {
+      background: #181b1d;
+      border-color: #181b1d;
+    }
+  }
+}
+
+.cta-area-3 {
+  .cta-thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    @include mq(xs) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+/*
+*****
+19. team
+******************
+*/
+.team-wrap {
+  background: #fff;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    .content {
+      background: $theme-color;
+
+      span {
+        color: #fff;
+      }
+
+      h4 {
+        color: #fff;
+      }
+    }
+
+    .thumb {
+      .team-social {
+        background: $theme-color;
+
+        ul {
+          li {
+            a {
+              color: _rgba(#fff, 0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .thumb {
+    padding-right: 50px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 15px 0 0 0;
+    }
+
+    .team-social {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      @include transition(0.3s);
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: block;
+          margin-bottom: 30px;
+          @include mq(lg) {
+            margin-bottom: 15px;
+          }
+
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            display: block;
+            color: #b2b2b2;
+            font-size: 16px;
+            text-align: center;
+            @include mq(lg) {
+              font-size: 14px;
+            }
+
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 28px 40px;
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    @include transition(0.3s);
+
+    @include mq(lg) {
+      padding: 20px 20px;
+    }
+
+    span {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: $theme-color;
+      margin-bottom: 5px;
+      @include transition(0.3s);
+    }
+
+    h4 {
+      font-size: 20px;
+      color: #181b1d;
+      font-weight: 700;
+      margin-bottom: 0;
+      @include transition(0.3s);
+      @include mq(lg) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.team-wrap .content h4 a{
+  color: inherit;
+}
