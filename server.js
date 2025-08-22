@@ -54,7 +54,7 @@ async function searchUnsplash(query, perPage = 10) {
   const data = await resp.json().catch(() => ({}));
 
   const results = Array.isArray(data?.results) ? data.results : [];
-  // คืนเฉพาะ url + alt สะอาดๆ
+  // คืนเฉอะ url + alt สะอาดๆ
   return results.map((r) => ({
     url: r?.urls?.regular || r?.urls?.full || r?.urls?.small,
     alt: r?.alt_description || r?.description || query
@@ -70,7 +70,7 @@ function sanitize(str) {
 
 function htmlTemplate({ title, translatedKeyword, headerImages, galleryImages }) {
   // ทำคารูเซล 3 ภาพแรก: สลับทุก 4 วิ พร้อม fade ช้าๆ
-  // CSS แบบไม่พึ่ง lib ใดๆ
+  // CSS แบบไม่พึ่ง lib ใด้
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -176,22 +176,25 @@ app.post("/api/translate", async (req, res) => {
 // สร้างหน้าเว็บ: แปล → ดึงรูป → เขียนไฟล์ HTML → คืน URL
 app.post("/api/generate", async (req, res) => {
   try {
-    const { keyword, title } = req.body || {};
-    const base = String(keyword || "").trim();
+    // allow both "keyword" and legacy "content" from frontend
+    const { keyword, title, content } = req.body || {};
+    // fallback to `content` if keyword is not provided
+    const base = String(keyword || content || "").trim();
     if (!base) return res.status(400).json({ error: "keyword is required" });
 
     const { toEnglishKeyword } = await import("./translator.js");
     const translated = await toEnglishKeyword(base);
 
-    // ดึงภาพ 10 รูป
+    // ดึงฌชฟ 10 รูป
     const images = await searchUnsplash(translated, 10);
     if (!images.length) {
-      // ไม่มีภาพก็ยังสร้างหน้าได้ แต่อาจจะไม่มีเฮดเดอร์/แกลเลอรี
+      // ไม่มีภาพก็ยังสร้างหน้าได้ แต่อาจะไม่มีเฮดเดอร์/แกลเลอรี
       console.warn("No images from Unsplash for:", translated);
     }
     const headerImages = images.slice(0, 3);
     const galleryImages = images.slice(0, 10);
 
+    // Use provided title or the base term as the page title
     const pageTitle = sanitize(title || base);
     const html = htmlTemplate({
       title: pageTitle,
@@ -205,7 +208,8 @@ app.post("/api/generate", async (req, res) => {
     await fsp.writeFile(filepath, html, "utf8");
     const url = `/generated/${filename}`;
 
-    res.json({ ok: true, url, translatedKeyword: translated });
+    // include generated HTML in response for compatibility with older frontends
+    res.json({ ok: true, url, translatedKeyword: translated, html });
   } catch (e) {
     console.error("generate error:", e);
     res.status(500).json({ error: "generate failed" });
