@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 function AIChat() {
   const [messages, setMessages] = useState([
     { sender: "ai", text: "สวัสดีครับ 👋 กรุณาระบุชื่อเว็บของคุณ" }
