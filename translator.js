@@ -1,4 +1,3 @@
-// translator.js
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -12,7 +11,7 @@ export async function toEnglishKeyword(thaiText) {
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    // ไม่มีคีย์ก็ใช้คำเดิมไปก่อน จะช่วยไม่ให้เซิร์ฟเวอร์ล้ม
+    // ไม่มีคีย์ก็ใช้คำเดิมไปก่อน จะช่วยไม่ให้เซิร์เวอร์ล้ม
     return input;
   }
 
@@ -32,20 +31,22 @@ export async function toEnglishKeyword(thaiText) {
     temperature: 0.2
   };
 
-  const resp = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  // ถ้า OpenAI ล่มหรือคีย์ผิด ให้ fallback เป็นคำเดิม
-  if (!resp.ok) return input;
-
-  const data = await resp.json().catch(() => ({}));
-  const text =
-    data?.choices?.[0]?.message?.content?.trim() || input;
-  return text;
+  try {
+    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+    // ถ้า OpenAI ล่มหรือคีย์ผิด ให้ fallback เป็นคำเดิม
+    if (!resp.ok) return input;
+    const data = await resp.json().catch(() => ({}));
+    const text = data?.choices?.[0]?.message?.content?.trim() || input;
+    return text;
+  } catch (err) {
+    // network/error: fallback to original input
+    return input;
+  }
 }
