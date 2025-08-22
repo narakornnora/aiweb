@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <title>WYSIWYG Editor (MVP)</title>
+  <style>
+    body{font-family:system-ui,Arial,Helvetica,sans-serif;margin:0}
+    header{padding:12px 16px;border-bottom:1px solid #eee;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    button{padding:8px 12px}
+    main{display:grid;grid-template-columns:1fr 420px;gap:12px;padding:12px}
+    iframe{width:100%;height:78vh;border:1px solid #ccc;border-radius:8px;background:#fff}
+    textarea{width:100%;height:78vh;font-family:ui-monospace,Consolas,monospace;border:1px solid #ccc;border-radius:8px;padding:10px}
+    .muted{color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Editor</strong>
+    <button id="btnEditToggle">Edit mode: OFF</button>
+    <button id="btnBold"><b>B</b></button>
+    <button id="btnItalic"><i>I</i></button>
+    <button id="btnUnderline"><u>U</u></button>
+    <button id="btnApplySrc">Apply จาก Source ▶</button>
+    <button id="btnSave">Save</button>
+    <button id="btnDownload">Download .html</button>
+    <span class="muted" id="msg"></span>
+  </header>
+
+  <main>
+    <iframe id="live"></iframe>
+    <div>
+      <div class="muted" style="margin:6px 0">Source (แก้ไขโค้ด HTML ตรงนี้ได้เช่นกัน)</div>
+      <textarea id="src"></textarea>
+    </div>
+  </main>
+
+  <script>
+    const live = document.getElementById('live');
+    const src = document.getElementById('src');
+    const msg = document.getElementById('msg');
+    const KEY = 'aiweb_preview_html';
+
+    // โหลด HTML จาก localStorage
+    const html = localStorage.getItem(KEY) || '<h1>ยังไม่มีข้อมูล</h1>';
+    live.srcdoc = html;
+    src.value = html;
+
+    // toggle designMode (แก้ไขบนหน้าโดยตรง)
+    let editOn = false;
+    document.getElementById('btnEditToggle').onclick = () => {
+      editOn = !editOn;
+      const btn = document.getElementById('btnEditToggle');
+      const doc = live.contentDocument;
+      doc.designMode = editOn ? 'on' : 'off';
+      btn.textContent = `Edit mode: ${editOn ? 'ON' : 'OFF'}`;
+      tip('โหมดแก้บนหน้า: ' + (editOn ? 'เปิด' : 'ปิด'));
+    };
+
+    // ฟังก์ชันสั่ง format ใน iframe (B/I/U)
+    function exec(cmd){
+      const win = live.contentWindow;
+      const doc = live.contentDocument;
+      if (!doc) return;
+      doc.execCommand(cmd, false, null);
+      win.focus();
+    }
+    document.getElementById('btnBold').onclick = ()=> exec('bold');
+    document.getElementById('btnItalic').onclick = ()=> exec('italic');
+    document.getElementById('btnUnderline').onclick = ()=> exec('underline');
+
+    // Apply จากช่อง Source ไปยัง iframe
+    document.getElementById('btnApplySrc').onclick = () => {
+      live.srcdoc = src.value;
+      tip('อัปเดตจาก Source แล้ว');
+    };
+
+    // Save กลับ localStorage
+    document.getElementById('btnSave').onclick = () => {
+      // ดึง HTML ปัจจุบันจาก iframe (ถ้าแก้ผ่าน designMode)
+      const current = live.srcdoc || src.value;
+      localStorage.setItem(KEY, current);
+      src.value = current;
+      tip('บันทึกแล้ว');
+    };
+
+    // ดาวน์โหลดไฟล์ HTML
+    document.getElementById('btnDownload').onclick = () => {
+      const blob = new Blob([live.srcdoc || src.value], {type:'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'site.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    };
+
+    function tip(t){
+      msg.textContent = t;
+      setTimeout(()=> msg.textContent='', 1800);
+    }
+  </script>
+</body>
+</html>

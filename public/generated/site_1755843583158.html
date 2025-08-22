@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ร้านอาหารไทย</title>
+<style>
+  :root {
+    --gap: 24px;
+    --maxw: 1100px;
+    --fade: 1.5s;       /* ความเร็วเฟด (ช้าๆ) */
+    --interval: 4s;     /* เวลาหยุดแต่ละภาพ */
+  }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    margin: 0; color: #111; background:#fff;
+  }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px 64px; }
+  header { position: relative; height: 56vh; min-height: 300px; width: 100%; overflow: hidden; background:#000; }
+  .slide { position:absolute; inset:0; opacity:0; transition: opacity var(--fade) ease; background-position:center; background-size:cover; }
+  .slide.active { opacity:1; }
+
+  h1 { font-size: clamp(28px, 3.5vw, 44px); margin: 28px 0 8px; }
+  .sub { color:#666; margin:0 0 28px; }
+
+  .grid {
+    display:grid; gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card {
+    grid-column: span 12;
+    border-radius: 16px; overflow:hidden; background:#f7f7f8;
+  }
+  .card img { display:block; width:100%; height: 260px; object-fit: cover; }
+  @media (min-width: 640px) { .card { grid-column: span 6; } }
+  @media (min-width: 1024px) { .card { grid-column: span 4; } }
+
+  .caption { padding:10px 12px; font-size: 14px; color:#444; }
+</style>
+</head>
+<body>
+
+<header id="hero">
+  
+  <div class="slide active"
+       style="background-image:url('https://images.unsplash.com/photo-1702392158359-015e7dc60356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="a food stand with a lot of food on display"></div>
+  <div class="slide"
+       style="background-image:url('https://images.unsplash.com/photo-1677221279334-ec6bf5fbe239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="a restaurant sign lit up in the dark"></div>
+  <div class="slide"
+       style="background-image:url('https://images.unsplash.com/photo-1636258015599-ac48129d80ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="a bunch of signs that are on the side of a building"></div>
+</header>
+
+<div class="container">
+  <h1>ร้านอาหารไทย</h1>
+  <p class="sub">Translated keyword: <strong>ร้านอาหารไทย</strong></p>
+
+  <section class="grid">
+    
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1702392158359-015e7dc60356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a food stand with a lot of food on display" loading="lazy" />
+      <figcaption class="caption">a food stand with a lot of food on display</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1677221279334-ec6bf5fbe239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a restaurant sign lit up in the dark" loading="lazy" />
+      <figcaption class="caption">a restaurant sign lit up in the dark</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1636258015599-ac48129d80ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a bunch of signs that are on the side of a building" loading="lazy" />
+      <figcaption class="caption">a bunch of signs that are on the side of a building</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1663421002688-c25aae999a7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw0fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a building with neon signs" loading="lazy" />
+      <figcaption class="caption">a building with neon signs</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1741945120461-e2b31be01fb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw1fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="A small storefront with motorbikes parked outside." loading="lazy" />
+      <figcaption class="caption">A small storefront with motorbikes parked outside.</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1755589494214-3e48817a4c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw2fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Restaurant exterior with red and white decorations" loading="lazy" />
+      <figcaption class="caption">Restaurant exterior with red and white decorations</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1736063129345-da4ddf87bb9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw3fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="A large sign on the side of a building" loading="lazy" />
+      <figcaption class="caption">A large sign on the side of a building</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1709104944208-462654866ef7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw4fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a street that has some houses on it" loading="lazy" />
+      <figcaption class="caption">a street that has some houses on it</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1755434218316-804f79268c39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw5fHwlRTAlQjglQTMlRTAlQjklODklRTAlQjglQjIlRTAlQjglOTklRTAlQjglQUQlRTAlQjglQjIlRTAlQjglQUIlRTAlQjglQjIlRTAlQjglQTMlRTAlQjklODQlRTAlQjglOTclRTAlQjglQTJ8ZW58MHx8fHwxNzU1ODQzNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="People dining and walking in a japanese alleyway at night." loading="lazy" />
+      <figcaption class="caption">People dining and walking in a japanese alleyway at night.</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1701156390935-152868cd2c3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMHx8JUUwJUI4JUEzJUUwJUI5JTg5JUUwJUI4JUIyJUUwJUI4JTk5JUUwJUI4JUFEJUUwJUI4JUIyJUUwJUI4JUFCJUUwJUI4JUIyJUUwJUI4JUEzJUUwJUI5JTg0JUUwJUI4JTk3JUUwJUI4JUEyfGVufDB8fHx8MTc1NTg0MzU4Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="a restaurant with a neon sign on the wall" loading="lazy" />
+      <figcaption class="caption">a restaurant with a neon sign on the wall</figcaption>
+    </figure>
+  </section>
+</div>
+
+<script>
+  // ควบคุมคารูเซล: เปลี่ยนทุก 4 วิ พร้อม transition ช้า (กำหนดใน CSS)
+  (function() {
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    if (slides.length <= 1) return;
+    let i = 0;
+    setInterval(() => {
+      const cur = slides[i];
+      i = (i + 1) % slides.length;
+      const next = slides[i];
+      cur.classList.remove('active');
+      next.classList.add('active');
+    }, 4000); // 4 วินาที
+  })();
+</script>
+
+</body>
+</html>

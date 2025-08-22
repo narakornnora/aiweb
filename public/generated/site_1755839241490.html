@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>เว็บไซต์ของฉัน</title>
+<style>
+  :root {
+    --gap: 24px;
+    --maxw: 1100px;
+    --fade: 1.5s;       /* ความเร็วเฟด (ช้าๆ) */
+    --interval: 4s;     /* เวลาหยุดแต่ละภาพ */
+  }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    margin: 0; color: #111; background:#fff;
+  }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 16px 64px; }
+  header { position: relative; height: 56vh; min-height: 300px; width: 100%; overflow: hidden; background:#000; }
+  .slide { position:absolute; inset:0; opacity:0; transition: opacity var(--fade) ease; background-position:center; background-size:cover; }
+  .slide.active { opacity:1; }
+
+  h1 { font-size: clamp(28px, 3.5vw, 44px); margin: 28px 0 8px; }
+  .sub { color:#666; margin:0 0 28px; }
+
+  .grid {
+    display:grid; gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card {
+    grid-column: span 12;
+    border-radius: 16px; overflow:hidden; background:#f7f7f8;
+  }
+  .card img { display:block; width:100%; height: 260px; object-fit: cover; }
+  @media (min-width: 640px) { .card { grid-column: span 6; } }
+  @media (min-width: 1024px) { .card { grid-column: span 4; } }
+
+  .caption { padding:10px 12px; font-size: 14px; color:#444; }
+</style>
+</head>
+<body>
+
+<header id="hero">
+  
+  <div class="slide active"
+       style="background-image:url('https://images.unsplash.com/photo-1687787460556-d7801c566522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="a lit up sign sitting on top of a floor"></div>
+  <div class="slide"
+       style="background-image:url('https://images.unsplash.com/photo-1600266573467-16ab6cb278ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="white daisy in bloom close up photo"></div>
+  <div class="slide"
+       style="background-image:url('https://images.unsplash.com/photo-1750816204148-5d02aff367cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080');"
+       aria-label="An "at" symbol on a beige background."></div>
+</header>
+
+<div class="container">
+  <h1>เว็บไซต์ของฉัน</h1>
+  <p class="sub">Translated keyword: <strong>เว็บไซต์ของฉัน</strong></p>
+
+  <section class="grid">
+    
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1687787460556-d7801c566522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a lit up sign sitting on top of a floor" loading="lazy" />
+      <figcaption class="caption">a lit up sign sitting on top of a floor</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1600266573467-16ab6cb278ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwyfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="white daisy in bloom close up photo" loading="lazy" />
+      <figcaption class="caption">white daisy in bloom close up photo</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1750816204148-5d02aff367cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwzfHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="An "at" symbol on a beige background." loading="lazy" />
+      <figcaption class="caption">An "at" symbol on a beige background.</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1695390470264-86847b15600b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw0fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a bird is flying high in the sky" loading="lazy" />
+      <figcaption class="caption">a bird is flying high in the sky</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1675651151785-ae8d84eddbea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw1fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a picture of a tree with no leaves" loading="lazy" />
+      <figcaption class="caption">a picture of a tree with no leaves</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1708939582011-ddbd2ff61b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw2fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a blurry photo of a plant in a dark room" loading="lazy" />
+      <figcaption class="caption">a blurry photo of a plant in a dark room</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1525164321265-4ac01cd348c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw3fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="photography of tree branches" loading="lazy" />
+      <figcaption class="caption">photography of tree branches</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1685741149700-1c4e6403c7bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw4fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a black door handle on a blue wall" loading="lazy" />
+      <figcaption class="caption">a black door handle on a blue wall</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1705356589949-aff81932058b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHw5fHwlRTAlQjklODAlRTAlQjglQTclRTAlQjklODclRTAlQjglOUElRTAlQjklODQlRTAlQjglOEIlRTAlQjglOTUlRTAlQjklOEMlRTAlQjglODIlRTAlQjglQUQlRTAlQjglODclRTAlQjglODklRTAlQjglQjElRTAlQjglOTl8ZW58MHx8fHwxNzU1ODM5MjQxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="a close up of a wall with writing on it" loading="lazy" />
+      <figcaption class="caption">a close up of a wall with writing on it</figcaption>
+    </figure>
+    <figure class="card">
+      <img src="https://images.unsplash.com/photo-1578290660132-0d8a28d46f13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzU4ODV8MHwxfHNlYXJjaHwxMHx8JUUwJUI5JTgwJUUwJUI4JUE3JUUwJUI5JTg3JUUwJUI4JTlBJUUwJUI5JTg0JUUwJUI4JThCJUUwJUI4JTk1JUUwJUI5JThDJUUwJUI4JTgyJUUwJUI4JUFEJUUwJUI4JTg3JUUwJUI4JTg5JUUwJUI4JUIxJUUwJUI4JTk5fGVufDB8fHx8MTc1NTgzOTI0MXww&ixlib=rb-4.1.0&q=80&w=1080" alt="kanji script neon signage turned on" loading="lazy" />
+      <figcaption class="caption">kanji script neon signage turned on</figcaption>
+    </figure>
+  </section>
+</div>
+
+<script>
+  // ควบคุมคารูเซล: เปลี่ยนทุก 4 วิ พร้อม transition ช้า (กำหนดใน CSS)
+  (function() {
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    if (slides.length <= 1) return;
+    let i = 0;
+    setInterval(() => {
+      const cur = slides[i];
+      i = (i + 1) % slides.length;
+      const next = slides[i];
+      cur.classList.remove('active');
+      next.classList.add('active');
+    }, 4000); // 4 วินาที
+  })();
+</script>
+
+</body>
+</html>
