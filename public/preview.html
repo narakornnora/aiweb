@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Preview</title>
+  <style>
+    body{font-family:system-ui,Arial,Helvetica,sans-serif;margin:20px}
+    .row{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+    textarea{width:100%;height:140px}
+    iframe{width:100%;height:70vh;border:1px solid #ccc;border-radius:8px}
+    button{padding:8px 12px;margin-right:8px}
+  </style>
+</head>
+<body>
+  <h2>Preview ที่ AI สร้าง</h2>
+
+  <div class="row">
+    <div>
+      <label>ข้อความ/คำสั่งให้ AI:</label>
+      <textarea id="prompt">เว็บไซต์ร้านกาแฟเล็ก ๆ โทนอบอุ่น เมนูแนะนำ 3 รายการ</textarea>
+      <div style="margin:8px 0">
+        <button id="btnGenerate">Generate (เรียก API)</button>
+        <button id="btnSample">ตัวอย่างเร็ว (ไม่เรียก API)</button>
+      </div>
+      <div>
+        <button id="btnEdit">แก้ไขเว็บนี้</button>
+        <span id="status" style="margin-left:8px;color:#666"></span>
+      </div>
+    </div>
+
+    <div>
+      <iframe id="preview"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const iframe = document.getElementById('preview');
+    const statusEl = document.getElementById('status');
+
+    // ตัวช่วย: เซฟ HTML ลง localStorage
+    function saveToLocal(html){
+      localStorage.setItem('aiweb_preview_html', html);
+      statusEl.textContent = 'บันทึกไว้สำหรับแก้ต่อแล้ว';
+      setTimeout(()=> statusEl.textContent='', 2000);
+    }
+
+    // เรียก backend ของพี่ (มีใน server.js อยู่แล้ว)
+    document.getElementById('btnGenerate').onclick = async () => {
+      const content = document.getElementById('prompt').value.trim();
+      try {
+        const res = await fetch('/api/generate', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ content })
+        });
+        const data = await res.json();
+        iframe.srcdoc = data.html;
+        saveToLocal(data.html);
+      } catch (e) {
+        alert('เรียก /api/generate ไม่ได้ ลองใช้ปุ่ม "ตัวอย่างเร็ว" แทนชั่วคราว');
+        console.error(e);
+      }
+    };
+
+    // ตัวอย่างเร็ว (ไม่ง้อ API)
+    document.getElementById('btnSample').onclick = () => {
+      const html = `
+      <!doctype html><html><head>
+        <meta charset="utf-8"><title>ร้านกาแฟอบอุ่น</title>
+        <style>
+          body{font-family:sans-serif;margin:0}
+          header{padding:40px 20px;background:linear-gradient(90deg,#7b4b33,#c38e70);color:#fff}
+          .wrap{max-width:980px;margin:0 auto;padding:20px}
+          .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+          .card{border:1px solid #eee;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+          .card img{width:100%;display:block}
+          .card h3{margin:12px}
+          .card p{margin:0 12px 16px;color:#666}
+          footer{padding:20px;color:#666;text-align:center}
+        </style>
+      </head><body>
+        <header><div class="wrap">
+          <h1>บ้านกาแฟ Little Warm</h1>
+          <p>คั่วหอม บรรยากาศดี เมนูซิกเนเจอร์จากบาริสต้าของเรา</p>
+          </div></header>
+        <main class="wrap">
+          <h2>เมนูแนะนำ</h2>
+          <div class="grid">
+            <div class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Latte"><h3>ลาเต้เนียน</h3><p>นุ่มละมุน กลมกล่อม</p></div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800" alt="Cappuccino"><h3>คาปูชิโน</h3><p>โฟมนุ่ม หอมอบเชย</p></div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800" alt="Americano"><h3>อเมริกาโน่</h3><p>เข้มสดชื่น ไม่หวาน</p></div>
+          </div>
+        </main>
+        <footer>© 2025 Little Warm Coffee</footer>
+      </body></html>`;
+      iframe.srcdoc = html;
+      saveToLocal(html);
+    };
+
+    // ไปหน้าแก้ไข
+    document.getElementById('btnEdit').onclick = () => {
+      const html = iframe.srcdoc;
+      if (html) saveToLocal(html);
+      location.href = 'editor.html';
+    };
+  </script>
+</body>
+</html>
