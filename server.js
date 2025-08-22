@@ -151,6 +151,7 @@ function htmlTemplate({ title, translatedKeyword, headerImages, galleryImages })
 
 </body>
 </html>`;
+  
 }
 
 // ---------- Routes ----------
@@ -227,6 +228,7 @@ app.post("/api/chat", async (req, res) => {
       return res.json({
         reply:
           "Server: ยังไม่ได้ตั้งค่า OPENAI_API_KEY ใน .env ครับ (ตอบกลับแบบจำลอง)"
+
       });
     }
 
